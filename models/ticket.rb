@@ -32,13 +32,13 @@ class Ticket
     return Film.new(film_hash)
   end
 
-  # def paid_ticket
-  #   sql = "SELECT (c.funds - f.price) = (#{@funds} - #{@price}) 
-  #         FROM customers as c
-  #         JOIN films as f 
-  #         ON #{@id} = f.customer_id"
-  #         SqlRunner.run(sql)
-  # end
+  def paid_ticket
+    sql = "SELECT (c.funds - f.price) = (#{@funds} - #{@price}) 
+          FROM customers as c
+          JOIN films as f 
+          ON #{@id} = f.customer_id"
+          SqlRunner.run(sql)
+  end
 
  def self.all()
    sql = "SELECT * FROM tickets"

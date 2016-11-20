@@ -32,7 +32,7 @@ ticket1.save()
 ticket2.save()
 ticket3.save()
 
-customer1.funds = 85
+customer1.funds -= film1.price
 
 customer1.update()
 
